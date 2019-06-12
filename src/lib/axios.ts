@@ -12,7 +12,7 @@ import { DepartmentResponse } from './types/department';
 import { HolidaysRepsonse } from './types/holiday';
 import { TimegridResponse, getDay } from './types/time';
 import { StatusResponse } from './types/status';
-import { TimetableResponse, CustomTimetableResponse, CustomTimeTableResponse } from './types/timetable';
+import { TimetableResponse, CustomTimetableResponse } from './types/timetable';
 import { ClassRegEventResponse } from './types/classregevents';
 import { ExamResponse } from './types/exams';
 import { AbsenceResponse } from './types/absences';
@@ -31,7 +31,7 @@ let jsessionid = ""
 /**
  * Signs you into Untis
  * @param config the config for logging in
- * @returns {Promise<Untis>} Promise of type Untis when successful login 
+ * @returns {Promise<Untis>} Promise of type Untis when successful login
  */
 export function login(config: Config): Promise<Untis> {
 	return new Promise((resolve, reject) => {
@@ -52,7 +52,7 @@ export function login(config: Config): Promise<Untis> {
 		url = getURL(config.server, config.school);
 		a.post(url, request)
 			.then(data => {
-				let header: string = data.headers["set-cookie"][0];
+				const header: string = data.headers["set-cookie"][0];
 				console.log(header);
 				if (header.includes("JSESSIONID")) {
 					resolve(data.data)
