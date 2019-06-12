@@ -28,5 +28,5 @@ It is a wrapper for the untis API with many interfaces und a lot of methods to g
 ## Todos
 
 - [x] Program everything
-- [ ] Documentation
+- [x] Documentation
 - [x] Add to NPM
