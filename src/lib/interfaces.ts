@@ -37,6 +37,9 @@ export interface Request {
 	jsonrpc?: "2.0";
 }
 
+/**
+ * The base structure of the typical Repsonse
+ */
 export interface Response {
 	jsonrpc: "2.0";
 	id: string;

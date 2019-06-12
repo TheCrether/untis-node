@@ -1,3 +1,7 @@
+/**
+ * The main file where all the functions that use Axios in are
+ */
+
 import { SubstitutionResponse } from './types/substitutions';
 import { PersonResponse } from './types/person';
 import { SchoolyearResponse } from './types/schoolyear';
@@ -30,7 +34,7 @@ let jsessionid = ""
 
 /**
  * Signs you into Untis
- * @param config the config for logging in
+ * @typeparam Config  the config for logging in
  * @returns {Promise<Untis>} Promise of type Untis when successful login
  */
 export function login(config: Config): Promise<Untis> {
