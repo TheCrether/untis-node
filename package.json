@@ -1,6 +1,6 @@
 {
 	"name": "untis-node",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "A package for communicating with the Webuntis API",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
