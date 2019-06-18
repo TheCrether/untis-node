@@ -62,19 +62,21 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<h2 id="untis-node">untis-node</h2>
+				<h1 id="untis-node">untis-node</h1>
+				<p><a href="https://badge.fury.io/js/untis-node"><img src="https://badge.fury.io/js/untis-node.svg" alt="npm version"></a></p>
 				<ul>
 					<li><a href="#untis-node">untis-node</a><ul>
-							<li><a href="#installation">Installation</a></li>
-							<li><a href="#features">Features</a></li>
-							<li><a href="#documentation">Documentation</a></li>
+							<li><a href="#Installation">Installation</a></li>
+							<li><a href="#Features">Features</a></li>
+							<li><a href="#Documentation">Documentation</a></li>
+							<li><a href="#Example">Example</a></li>
+							<li><a href="#Todos">Todos</a></li>
 						</ul>
 					</li>
-					<li><a href="#todos">Todos</a></li>
 				</ul>
-				<h3 id="installation">Installation</h3>
+				<h2 id="installation">Installation</h2>
 				<pre><code class="language-bash">npm install --save untis-node</code></pre>
-				<h3 id="features">Features</h3>
+				<h2 id="features">Features</h2>
 				<p>It is a wrapper for the untis API with many interfaces und a lot of methods to get information from the API</p>
 				<ul>
 					<li>Login to the Untis servers</li>
@@ -82,12 +84,44 @@
 					<li>fetch all Data when successfully logging in</li>
 					<li>Uses Promises</li>
 				</ul>
-				<h3 id="documentation">Documentation</h3>
+				<h2 id="documentation">Documentation</h2>
 				<p><a href="https://thecrether.github.io/untis-node">The Documentation is here</a></p>
+				<h2 id="example">Example</h2>
+				<p>First you have to get your school id and your server.
+					You can find your school id and your server by going to <a href="http://webuntis.com">webuntis.com</a> and then searching for your school.
+					After being redirected to your school web page you can see your school id and your server by looking at the link:
+					Example link: <a href="https://mese.webuntis.com/WebUntis/?school=htbla_kaindorf#/basic/main">https://mese.webuntis.com/WebUntis/?school=htbla_kaindorf#/basic/main</a>
+					the server is the word before &quot;.webuntis.com&quot;, so in this example: mese
+				the school is the word after &quot;?school=&quot;, so in this example: htbla_kaindorf</p>
+				<p>[Example GIF][example.gif]</p>
+				<p>Javascript:</p>
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> untis = <span class="hljs-built_in">require</span>(<span class="hljs-string">"untis-node"</span>);
+untis.login({
+    <span class="hljs-attr">username</span>: <span class="hljs-string">"a username here"</span>,
+    <span class="hljs-attr">password</span>: <span class="hljs-string">"a password here"</span>,
+    <span class="hljs-attr">school</span>: <span class="hljs-string">"your school"</span>,
+    <span class="hljs-attr">server</span>: <span class="hljs-string">"your server"</span>
+}).then(<span class="hljs-function"><span class="hljs-params">data</span> =&gt;</span> {
+    <span class="hljs-comment">//do your stuff here</span>
+});</code></pre>
+				<p>Typescript:</p>
+				<pre><code class="language-ts"><span class="hljs-keyword">import</span> {login, Config} <span class="hljs-keyword">from</span> <span class="hljs-string">"untis-node"</span>;
+
+<span class="hljs-keyword">const</span> config: Config = {
+    username: <span class="hljs-string">"a username here"</span>,
+    password: <span class="hljs-string">"a password here"</span>,
+    school: <span class="hljs-string">"your school"</span>,
+    server: <span class="hljs-string">"your server"</span>
+};
+
+login(config).then(<span class="hljs-function"><span class="hljs-params">data</span> =&gt;</span> {
+    <span class="hljs-comment">// do your stuff</span>
+})</code></pre>
 				<h2 id="todos">Todos</h2>
 				<ul>
 					<li><input checked="" disabled="" type="checkbox"> Program everything</li>
-					<li><input disabled="" type="checkbox"> Documentation</li>
+					<li><input checked="" disabled="" type="checkbox"> Documentation</li>
+					<li><input checked="" disabled="" type="checkbox"> detailed docs</li>
 					<li><input checked="" disabled="" type="checkbox"> Add to NPM</li>
 				</ul>
 			</div>

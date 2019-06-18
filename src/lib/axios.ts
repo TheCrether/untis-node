@@ -34,8 +34,8 @@ let jsessionid = ""
 
 /**
  * Signs you into Untis
- * @typeparam Config  the config for logging in
- * @returns {Promise<Untis>} Promise of type Untis when successful login
+ * @param config the config of type [[Config]] for logging in
+ * @returns {Promise<Untis>} Promise of type [[Untis]] when successful login
  */
 export function login(config: Config): Promise<Untis> {
 	return new Promise((resolve, reject) => {
@@ -105,7 +105,7 @@ export function logout(): Promise<boolean> {
 
 /**
  * gets the teachers
- * @returns {Promise<TeacherResponse>} Promise of type {@link TeacherResponse}
+ * @returns {Promise<TeacherResponse>} Promise of type [[TeacherResponse]]
  */
 export function getTeachers(): Promise<TeacherResponse> {
 	return new Promise((resolve, reject) => {
@@ -133,7 +133,7 @@ export function getTeachers(): Promise<TeacherResponse> {
 
 /**
  * gets the students
- * @returns {Promise<StudentResponse>} Promise of type StudentResponse
+ * @returns {Promise<StudentResponse>} Promise of type [[StudentResponse]]
  */
 export function getStudents(): Promise<StudentResponse> {
 	return new Promise((resolve, reject) => {
@@ -163,7 +163,7 @@ export function getStudents(): Promise<StudentResponse> {
 
 /**
  * gets the classes
- * @returns {Promise<ClassesResponse>} Promise of type ClassesResponse
+ * @returns {Promise<ClassesResponse>} Promise of type [[ClassesResponse]]
  */
 export function getClasses(): Promise<ClassesResponse> {
 	return new Promise((resolve, reject) => {
@@ -193,7 +193,7 @@ export function getClasses(): Promise<ClassesResponse> {
 
 /**
  * gets the subjects
- * @returns {Promise<SubjectResponse>} Promise of type SubjectResponse
+ * @returns {Promise<SubjectResponse>} Promise of type [[SubjectResponse]]
  */
 export function getSubjects(): Promise<SubjectResponse> {
 	return new Promise((resolve, reject) => {
@@ -223,7 +223,7 @@ export function getSubjects(): Promise<SubjectResponse> {
 
 /**
  * gets the rooms
- * @returns {Promise<RoomResponse>} Promise of type RoomResponse
+ * @returns {Promise<RoomResponse>} Promise of type [[RoomResponse]]
  */
 export function getRooms(): Promise<RoomResponse> {
 	return new Promise((resolve, reject) => {
@@ -253,7 +253,7 @@ export function getRooms(): Promise<RoomResponse> {
 
 /**
  * gets the departments
- * @returns {Promise<DepartmentResponse>} Promise of type DepartmentResponse
+ * @returns {Promise<DepartmentResponse>} Promise of type [[DepartmentResponse]]
  */
 export function getDepartments(): Promise<DepartmentResponse> {
 	return new Promise((resolve, reject) => {
@@ -283,7 +283,7 @@ export function getDepartments(): Promise<DepartmentResponse> {
 
 /**
  * gets all holidays
- * @returns {Promise<HolidaysResponse>} Promise of type HolidaysResponse
+ * @returns {Promise<HolidaysResponse>} Promise of type [[HolidaysResponse]]
  */
 export function getHolidays(): Promise<HolidaysRepsonse> {
 	return new Promise((resolve, reject) => {
@@ -313,7 +313,7 @@ export function getHolidays(): Promise<HolidaysRepsonse> {
 
 /**
  * gets the timegrid for the institution
- * @returns {Promise<TimegridResponse>} Promise of type TimegridResponse
+ * @returns {Promise<TimegridResponse>} Promise of type [[TimegridResponse]]
  */
 export function getTimegrid(): Promise<TimegridResponse> {
 	return new Promise((resolve, reject) => {
@@ -343,7 +343,7 @@ export function getTimegrid(): Promise<TimegridResponse> {
 
 /**
  * gets the "status Data" for a institution which are farbcodes for lessons etc.
- * @returns {Promise<StatusResponse>} Promise of type StatusResponse
+ * @returns {Promise<StatusResponse>} Promise of type [[StatusResponse]]
  */
 export function getStatusData(): Promise<StatusResponse> {
 	return new Promise((resolve, reject) => {
@@ -373,7 +373,7 @@ export function getStatusData(): Promise<StatusResponse> {
 
 /**
  * gets the current schoolyear
- * @returns {Promise<SchoolyearResponse>} Promise of type SchoolYearResponse
+ * @returns {Promise<SchoolyearResponse>} Promise of type [[SchoolYearResponse]]
  */
 export function getCurrentSchoolyear(): Promise<SchoolyearResponse> {
 	return new Promise((resolve, reject) => {
@@ -403,7 +403,7 @@ export function getCurrentSchoolyear(): Promise<SchoolyearResponse> {
 
 /**
  * gets all available schoolyears
- * @returns {Promise<SchoolyearResponse>} Promise of type SchoolyearResponse
+ * @returns {Promise<SchoolyearResponse>} Promise of type [[SchoolyearResponse]]
  */
 export function getAvailableSchoolyears(): Promise<SchoolyearResponse> {
 	return new Promise((resolve, reject) => {
@@ -432,11 +432,12 @@ export function getAvailableSchoolyears(): Promise<SchoolyearResponse> {
 }
 
 /**
+ * function for getting an simple timetable
  * @param id the element id
  * @param type the element type
  * @param startDate the start date of the time period
  * @param endDate the end date of the time period
- * @returns {Promise<TimetableResponse>} Promise of type TimetableResponse
+ * @returns {Promise<TimetableResponse>} Promise of type [[TimetableResponse]]
  */
 export function getSimpleTimetable(id: number, type: number, startDate: number, endDate: number): Promise<TimetableResponse> {
 	return new Promise((resolve, reject) => {
@@ -474,7 +475,7 @@ export function getSimpleTimetable(id: number, type: number, startDate: number, 
 
 
 /**
- * 
+ * function for getting a custom timetable
  * @param _id an element id, either internal or external
  * @param type type of element
  * @param keyType keyType for the id
@@ -491,7 +492,7 @@ export function getSimpleTimetable(id: number, type: number, startDate: number, 
  * @param roomFields optional, array with an id, name, longname, and external key
  * @param subjectFields optional, array with an id, name, longname, and external key
  * @param teacherFields optional, array with an id, name, longname, and external key
- * @returns {Promise<CustomTimetableResponse>} Promise of type CustomTimeTableResponse
+ * @returns {Promise<CustomTimetableResponse>} Promise of type [[CustomTimeTableResponse]]
  */
 export function getCustomizableTimetable(
 	_id: string,
@@ -561,12 +562,12 @@ export function getCustomizableTimetable(
 	});
 }
 /**
- * 
+ * function for getting the id of a person
  * @param type type of person
  * @param sn surname of person
  * @param fn forename of person
  * @param dob date of birth of the person, default: 0
- * @returns {Promise<PersonResponse>} Promise of type PersonResponse
+ * @returns {Promise<PersonResponse>} Promise of type [[PersonResponse]]
  */
 export function getPerson(type: number, sn: string, fn: string, dob: number | 0): Promise<PersonResponse> {
 	return new Promise((resolve, reject) => {
@@ -600,11 +601,11 @@ export function getPerson(type: number, sn: string, fn: string, dob: number | 0)
 }
 
 /**
- * 
+ * function for getting the substitutions of a time period and a department
  * @param startDate the start date of the time period
  * @param endDate the end date of the time period
  * @param departmentId the departmentId where to search for substitutions, default: 0 (all departments)
- * @returns {Promise<SubstitutionResponse>} Promise of type SubstitutionsResponse
+ * @returns {Promise<SubstitutionResponse>} Promise of type [[SubstitutionsResponse]]
  */
 export function getSubstitutions(startDate: number, endDate: number, departmentId: number | 0): Promise<SubstitutionResponse> {
 	return new Promise((resolve, reject) => {
@@ -637,10 +638,10 @@ export function getSubstitutions(startDate: number, endDate: number, departmentI
 }
 
 /**
- * 
+ * function for getting the class register events for a time period
  * @param startDate the start date for the time period
  * @param endDate the end date for the time period
- * @returns {Promise<ClassRegEventResponse>} Promise of type ClassRegEventResponse
+ * @returns {Promise<ClassRegEventResponse>} Promise of type [[ClassRegEventResponse]]
  */
 export function getClassRegisterEvents(startDate: number, endDate: number): Promise<ClassRegEventResponse> {
 	return new Promise((resolve, reject) => {
@@ -672,11 +673,11 @@ export function getClassRegisterEvents(startDate: number, endDate: number): Prom
 }
 
 /**
- * 
+ * function to get exams
  * @param examTypeId type of exam
  * @param startDate start date of the time period
  * @param endDate end date of the time period
- * @returns {Promise<ExamResponse>} PRomise of type ExamResponse
+ * @returns {Promise<ExamResponse>} PRomise of type [[ExamResponse]]
  */
 export function getExams(examTypeId: string, startDate: number, endDate: number): Promise<ExamResponse> {
 	return new Promise((resolve, reject) => {
@@ -713,10 +714,10 @@ export function getExamTypes() {
 }
 
 /**
- * 
+ * function that gets the absences
  * @param startDate the start date of the time period
  * @param endDate the end date of the time period
- * @returns {Promise<AbsenceResponse>} Promise of type AbsenceResponse
+ * @returns {Promise<AbsenceResponse>} Promise of type [[AbsenceResponse]]
  */
 export function getAbsences(startDate: number, endDate: number): Promise<AbsenceResponse> {
 	return new Promise((resolve, reject) => {
@@ -748,7 +749,8 @@ export function getAbsences(startDate: number, endDate: number): Promise<Absence
 }
 
 /**
- * @returns {Promise<RemarksResponse>} Promise of type RemarksResponse
+ * function for getting the remarks
+ * @returns {Promise<RemarksResponse>} Promise of type [[RemarksResponse]]
  */
 export function getRemarks(): Promise<RemarksResponse> {
 	return new Promise((resolve, reject) => {
@@ -777,7 +779,8 @@ export function getRemarks(): Promise<RemarksResponse> {
 }
 
 /**
- * @returns {Promise<RemarksGroupResponse>} Promise of type RemarksGroupResponse
+ * function for getting the remarks for groups
+ * @returns {Promise<RemarksGroupResponse>} Promise of type [[RemarksGroupResponse]]
  */
 export function getRemarksForGroups(): Promise<RemarksGroupResponse> {
 	return new Promise((resolve, reject) => {
@@ -806,13 +809,13 @@ export function getRemarksForGroups(): Promise<RemarksGroupResponse> {
 }
 
 /**
- * 
+ * function for getting class register events
  * @param startDate the start date of the time period
  * @param endDate the end date of the time period
  * @param _id the id for 
  * @param type 
  * @param keyType 
- * @returns {Promsie<ClassRegEventResponse>} Promise of type ClassRegEventResponse
+ * @returns {Promsie<ClassRegEventResponse>} Promise of type [[ClassRegEventResponse]]
  */
 export function getCustomClassRegEvents(
 	startDate: number,
@@ -855,9 +858,9 @@ export function getCustomClassRegEvents(
 }
 
 /**
- * 
+ * function for sending custom requests
  * @param request the custom request you want to send
- * @returns {Promise<Response>} Promise of type Response
+ * @returns {Promise<Response>} Promise of type [[Response]]
  */
 export function sendCustomRequest(request: Request): Promise<Response> {
 	return new Promise((resolve, reject) => {
