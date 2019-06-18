@@ -1,9 +1,9 @@
-import { Response } from './../interfaces';
-import { Class, ClassesResponse, getClassByID } from './klassen';
-import { Time } from './time';
+import { Response } from "./../interfaces";
+import { Class, ClassesResponse, getClassByID } from "./klassen";
+import { Time } from "./time";
 import { getSubjectById, SubjectResponse, Subject } from "./subjects";
-import { getRoomByID, RoomResponse, Room } from './rooms';
-import { getTeacherByID, Teacher, TeacherResponse } from './teachers';
+import { getRoomByID, RoomResponse, Room } from "./rooms";
+import { getTeacherByID, Teacher, TeacherResponse } from "./teachers";
 export interface TimetableResponse extends Response {
   result: Lesson[];
 }

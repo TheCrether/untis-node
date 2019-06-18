@@ -1,7 +1,5 @@
-import { Day } from './time';
-import { Response } from '../interfaces';
+import { Day } from "./time";
+import { Response } from "../interfaces";
 export interface HolidaysRepsonse extends Response {
-  result: Day[]
+  result: Day[];
 }
-
-

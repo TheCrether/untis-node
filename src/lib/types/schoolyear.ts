@@ -1,11 +1,11 @@
-import { Response } from './../interfaces';
+import { Response } from "./../interfaces";
 export interface SchoolyearResponse extends Response {
-	result: Schoolyear[];
+  result: Schoolyear[];
 }
 
 export interface Schoolyear {
-	id: number;
-	name: string;
-	startDate: number;
-	endDate: number;
+  id: number;
+  name: string;
+  startDate: number;
+  endDate: number;
 }

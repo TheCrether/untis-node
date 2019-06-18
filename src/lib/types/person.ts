@@ -1,4 +1,4 @@
-import { Response } from './../interfaces';
+import { Response } from "./../interfaces";
 export interface PersonResponse extends Response {
-	result: number | 0
+  result: number | 0;
 }

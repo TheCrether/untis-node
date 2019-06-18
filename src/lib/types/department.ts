@@ -1,10 +1,10 @@
-import { Response } from './../interfaces';
+import { Response } from "./../interfaces";
 export interface DepartmentResponse extends Response {
-	result: Department[];
+  result: Department[];
 }
 
 export interface Department {
-	id: number;
-	name: string;
-	longName: string;
+  id: number;
+  name: string;
+  longName: string;
 }

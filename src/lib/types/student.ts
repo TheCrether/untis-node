@@ -1,13 +1,13 @@
-import { Response } from './../interfaces';
+import { Response } from "./../interfaces";
 export interface StudentResponse extends Response {
-	result: Student[];
+  result: Student[];
 }
 
 export interface Student {
-	id: number;
-	key: string;
-	name: string;
-	foreName: string;
-	longName: string;
-	gender: string;
+  id: number;
+  key: string;
+  name: string;
+  foreName: string;
+  longName: string;
+  gender: string;
 }

@@ -2,7 +2,7 @@ import { Response } from "../interfaces";
 
 export interface AbsenceResponse extends Response {
   result: {
-    periodsWithAbsences: Absence[]
+    periodsWithAbsences: Absence[];
   };
 }
 

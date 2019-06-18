@@ -1,4 +1,4 @@
-import { Response } from './../interfaces';
+import { Response } from "./../interfaces";
 export interface TeacherResponse extends Response {
   result: Teacher[];
 }

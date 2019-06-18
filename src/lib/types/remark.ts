@@ -1,20 +1,20 @@
-import { Response } from './../interfaces';
+import { Response } from "./../interfaces";
 export interface RemarksResponse extends Response {
-	result: Remark[];
+  result: Remark[];
 }
 
 export interface Remark {
-	id: number;
-	name: string;
-	longName: string;
-	groupId: number;
+  id: number;
+  name: string;
+  longName: string;
+  groupId: number;
 }
 
 export interface RemarksGroupResponse extends Response {
-	result: RemarkGroup[];
+  result: RemarkGroup[];
 }
 
 export interface RemarkGroup {
-	id: number;
-	name: string;
+  id: number;
+  name: string;
 }

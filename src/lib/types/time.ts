@@ -21,7 +21,7 @@ function leadingZeros(number: string) {
 export function getDay(date: number) {
   return {
     year: Math.floor(date / 10000),
-    month: Math.floor(date % 10000 / 100),
+    month: Math.floor((date % 10000) / 100),
     day: Math.floor(date % 100)
   };
 }
@@ -49,4 +49,3 @@ export interface Day {
   startDate: number;
   endDate: number;
 }
-

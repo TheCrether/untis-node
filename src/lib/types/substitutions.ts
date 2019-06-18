@@ -1,5 +1,5 @@
-import { Response } from './../interfaces';
-import { ID } from './timetable';
+import { Response } from "./../interfaces";
+import { ID } from "./timetable";
 export interface SubstitutionResponse extends Response {
   result: Substitution[];
 }

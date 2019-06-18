@@ -1,5 +1,5 @@
-import { ID } from './timetable';
-import { Response } from '../interfaces';
+import { ID } from "./timetable";
+import { Response } from "../interfaces";
 export interface ClassesResponse extends Response {
   result: Class[];
 }
@@ -13,7 +13,10 @@ export interface Class {
   did: number;
 }
 
-export function getClassByID(klassen: ClassesResponse, id: number): Class | undefined {
+export function getClassByID(
+  klassen: ClassesResponse,
+  id: number
+): Class | undefined {
   for (const klasse of klassen.result) {
     if (klasse.id === id) {
       return klasse;
